@@ -17,10 +17,31 @@
    */
   function init() {
     console.log("Window loaded!");
+
+    // Reference to buttons
+    const encryptButton = document.getElementById("encrypt-it");
+    const resetButton = document.getElementById("reset");
+
+    // Event listeners
+    encryptButton.addEventListener("click", handleClick);
+    resetButton.addEventListener("click", handleReset);
   }
 
-  // Add any other functions in this area (you should not implement your
-  // entire program in the init function, for similar reasons that
-  // you shouldn't write an entire Java program in the main method).
+  // Functions
+
+  /**
+   * handleClick()
+   */
+  function handleClick() {
+    console.log("Encrypt button clicked!");
+  }
+
+  /**
+   * handleReset()
+   */
+  function handleReset() {
+    console.log("Reset button clicked!");
+  }
+
 
 })();
