@@ -12,11 +12,11 @@
   window.addEventListener("load", init);
 
   /**
-   * TODO: Write a function comment using JSDoc.
+   * Initializes the page after it has loaded.
+   * Sets up event listeners for the Encrypt and Reset buttons.
    */
   function init() {
-    // Note: In this function, we usually want to set up our event handlers
-    // for UI elements on the page.
+    console.log("Window loaded!");
   }
 
   // Add any other functions in this area (you should not implement your
