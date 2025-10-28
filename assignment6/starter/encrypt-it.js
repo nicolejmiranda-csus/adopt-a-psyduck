@@ -23,17 +23,22 @@
     const resetButton = document.getElementById("reset");
 
     // Event listeners
-    encryptButton.addEventListener("click", handleClick);
+    encryptButton.addEventListener("click", handleEncryptIt);
     resetButton.addEventListener("click", handleReset);
   }
 
   // Functions
 
   /**
-   * handleClick()
+   * Handles functionality for the Encrypt button.
+   * Pulls the text from the input area and encrypts it using shiftCipher()
+   * It then displays the result to the result area.
    */
-  function handleClick() {
+  function handleEncryptIt() {
     console.log("Encrypt button clicked!");
+    const inputText = document.getElementById("input-text").value;
+    const encryptedText = shiftCipher(inputText);
+    document.getElementById("result").textContent = encryptedText;
   }
 
   /**
@@ -46,5 +51,28 @@
     document.getElementById("result").textContent = "";
   }
 
+  /**
+   * Returns an encrypted version of the given text, where
+   * each letter is shifted alphabetically ahead by 1 letter,
+   * and 'z' is shifted to 'a' (creating an alphabetical cycle).
+   */
+  function shiftCipher(text) {
+    text = text.toLowerCase();
+    let result = "";
+
+    for (let i = 0; i < text.length; i++) {
+      if (text[i] < 'a' || text[i] > 'z') {
+        result += text[i];
+      } else if (text[i] == 'z') {
+        result += 'a';
+      } else { // letter is between 'a' and 'y'
+        let letter = text.charCodeAt(i);
+        let resultLetter = String.fromCharCode(letter + 1);
+        result += resultLetter;
+      }
+    }
+    
+    return result;
+  }
 
 })();
