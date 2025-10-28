@@ -37,10 +37,13 @@
   }
 
   /**
-   * handleReset()
+   * Handles functionality for the Reset button.
+   * Clears both the input and result text area.
    */
   function handleReset() {
     console.log("Reset button clicked!");
+    document.getElementById("input-text").value = "";
+    document.getElementById("result").textContent = "";
   }
 
 
